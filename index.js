@@ -12,8 +12,8 @@ function getDataFromApi(searchTerm, callback) {
 function renderResult(result) {
     // return `<div>${JSON.stringify(result)}</div>`
     return `<div>
-        <a href=http://www.youtube.com/watch?v=${JSON.stringify(result.id.videoId)}>
-        <img class="js-thumbnail" target="_blank" src=${JSON.stringify(result.snippet.thumbnails.medium.url)} alt=${JSON.stringify(result.snippet.description)}></a>
+        <a href="http://www.youtube.com/watch?v=${result.id.videoId}">
+        <img class="js-thumbnail" target="_blank" src="${result.snippet.thumbnails.medium.url}" alt="${result.snippet.description}"></a>
         </div>`
 }
 
