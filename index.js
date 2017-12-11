@@ -19,11 +19,12 @@ function renderResult(result) {
 
 function renderYoutubeSearchData(data) {
     const results= data.items.map((item, index) => renderResult(item));
-    $(`.js-search-results`).html(results);
+    results.unshift(`<h2>Results: ${data.pageInfo.resultsPerPage} out of ${data.pageInfo.totalResults}</h2>`)
+    $(".js-search-results").html(results);
 }
 
 function watchSubmit() {
-    $(`.js-search-form`).submit(event => {
+    $(".js-search-form").submit(event => {
         event.preventDefault();
         const queryTarget = $(event.currentTarget).find(`.js-query`);
         const query = queryTarget.val()
